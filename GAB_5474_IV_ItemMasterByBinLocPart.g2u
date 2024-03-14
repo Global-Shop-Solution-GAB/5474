@@ -1,0 +1,423 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_Main..create(BaseForm)
+Gui.f_Main..caption("Item Master Labels by Bin & Part (5474)")
+Gui.f_Main..size(5175,3870)
+Gui.f_Main..minx(0)
+Gui.f_Main..miny(0)
+Gui.f_Main..position(0,0)
+Gui.f_Main..forecolor(0)
+Gui.f_Main..BackColor(-2147483633)
+Gui.f_Main..mousepointer(0)
+Gui.f_Main..Event(UnLoad,f_main_unload)
+Gui.f_Main..AlwaysOnTop(False)
+Gui.f_Main..FontName("Tahoma")
+Gui.f_Main..FontSize(8.25)
+Gui.f_Main..ControlBox(True)
+Gui.f_Main..MaxButton(True)
+Gui.f_Main..MinButton(True)
+Gui.f_Main..Moveable(True)
+Gui.f_Main..Sizeable(True)
+Gui.f_Main..ShowInTaskBar(True)
+Gui.f_Main..TitleBar(True)
+Gui.f_Main.txtStartBin.create(textbox,"",True,1215,300,0,105,1050,True,0,"Arial",8,-2147483643,1)
+Gui.f_Main.txtStartBin.defaultvalue("")
+Gui.f_Main.txtStartBin.MaxLength(6)
+Gui.f_Main.txtStartBin.TabStop(True)
+Gui.f_Main.txtStartBin.TabIndex(3)
+Gui.f_Main.txtEndBin.create(textbox,"",True,1215,300,0,1950,1050,True,0,"Arial",8,-2147483643,1)
+Gui.f_Main.txtEndBin.defaultvalue("")
+Gui.f_Main.txtEndBin.MaxLength(6)
+Gui.f_Main.txtEndBin.TabStop(True)
+Gui.f_Main.txtEndBin.TabIndex(5)
+Gui.f_Main.lblStartBin.create(label,"Starting BIN",True,840,210,1,105,825,True,0,"Arial",8,-2147483633,0,0)
+Gui.f_Main.lblStartBin.defaultvalue("")
+Gui.f_Main.lblStartBin.BorderStyle(0)
+Gui.f_Main.luStartBin.create(button)
+Gui.f_Main.luStartBin.caption("")
+Gui.f_Main.luStartBin.size(375,375)
+Gui.f_Main.luStartBin.position(1350,975)
+Gui.f_Main.luStartBin.event(Click,lustartbin_click)
+Gui.f_Main.luStartBin.defaultvalue("")
+Gui.f_Main.luStartBin.Enabled(True)
+Gui.f_Main.luStartBin.Visible(True)
+Gui.f_Main.luStartBin.Zorder(0)
+Gui.f_Main.luStartBin.FontName("Tahoma")
+Gui.f_Main.luStartBin.FontSize(8.25)
+Gui.f_Main.luStartBin.SvgPicture("icon_browser_color")
+Gui.f_Main.luStartBin.TabStop(True)
+Gui.f_Main.luStartBin.TabIndex(4)
+Gui.f_Main.lblEndBin.create(label,"Ending BIN",True,765,210,1,1950,825,True,0,"Arial",8,-2147483633,0,0)
+Gui.f_Main.lblEndBin.defaultvalue("")
+Gui.f_Main.lblEndBin.BorderStyle(0)
+Gui.f_Main.luEndBin.create(button)
+Gui.f_Main.luEndBin.caption("")
+Gui.f_Main.luEndBin.size(390,375)
+Gui.f_Main.luEndBin.position(3195,975)
+Gui.f_Main.luEndBin.event(Click,luendbin_click)
+Gui.f_Main.luEndBin.defaultvalue("")
+Gui.f_Main.luEndBin.Enabled(True)
+Gui.f_Main.luEndBin.Visible(True)
+Gui.f_Main.luEndBin.Zorder(0)
+Gui.f_Main.luEndBin.FontName("Tahoma")
+Gui.f_Main.luEndBin.FontSize(8.25)
+Gui.f_Main.luEndBin.SvgPicture("icon_browser_color")
+Gui.f_Main.luEndBin.TabStop(True)
+Gui.f_Main.luEndBin.TabIndex(6)
+Gui.f_Main.cmdPrint.create(button)
+Gui.f_Main.cmdPrint.caption("Print")
+Gui.f_Main.cmdPrint.size(855,375)
+Gui.f_Main.cmdPrint.position(105,2955)
+Gui.f_Main.cmdPrint.event(Click,cmdprint_click)
+Gui.f_Main.cmdPrint.defaultvalue("")
+Gui.f_Main.cmdPrint.Enabled(True)
+Gui.f_Main.cmdPrint.Visible(True)
+Gui.f_Main.cmdPrint.Zorder(0)
+Gui.f_Main.cmdPrint.FontName("Tahoma")
+Gui.f_Main.cmdPrint.FontSize(8.25)
+Gui.f_Main.cmdPrint.SvgPicture("icon_printer_color")
+Gui.f_Main.cmdPrint.TabStop(True)
+Gui.f_Main.cmdPrint.TabIndex(13)
+Gui.f_Main.cmdCancel.create(button)
+Gui.f_Main.cmdCancel.caption("Cancel")
+Gui.f_Main.cmdCancel.size(855,375)
+Gui.f_Main.cmdCancel.position(1020,2955)
+Gui.f_Main.cmdCancel.event(Click,cmdcancel_click)
+Gui.f_Main.cmdCancel.defaultvalue("")
+Gui.f_Main.cmdCancel.Enabled(True)
+Gui.f_Main.cmdCancel.Visible(True)
+Gui.f_Main.cmdCancel.Zorder(0)
+Gui.f_Main.cmdCancel.FontName("Tahoma")
+Gui.f_Main.cmdCancel.FontSize(8.25)
+Gui.f_Main.cmdCancel.TabStop(True)
+Gui.f_Main.cmdCancel.TabIndex(14)
+Gui.f_Main.lbl3.create(label,"Loc",True,270,210,1,105,105,True,0,"Arial",8,-2147483633,0,0)
+Gui.f_Main.lbl3.defaultvalue("")
+Gui.f_Main.lbl3.BorderStyle(0)
+Gui.f_Main.txtLocation.create(textbox,"",True,375,300,0,105,330,True,0,"Arial",8,-2147483643,1)
+Gui.f_Main.txtLocation.defaultvalue("")
+Gui.f_Main.txtLocation.MaxLength(2)
+Gui.f_Main.txtLocation.TabStop(True)
+Gui.f_Main.txtLocation.TabIndex(1)
+Gui.f_Main.luLocation.create(button)
+Gui.f_Main.luLocation.caption("")
+Gui.f_Main.luLocation.size(375,375)
+Gui.f_Main.luLocation.position(510,255)
+Gui.f_Main.luLocation.event(Click,lulocation_click)
+Gui.f_Main.luLocation.defaultvalue("")
+Gui.f_Main.luLocation.Enabled(True)
+Gui.f_Main.luLocation.Visible(True)
+Gui.f_Main.luLocation.Zorder(0)
+Gui.f_Main.luLocation.FontName("Tahoma")
+Gui.f_Main.luLocation.FontSize(8.25)
+Gui.f_Main.luLocation.SvgPicture("icon_browser_color")
+Gui.f_Main.luLocation.TabStop(True)
+Gui.f_Main.luLocation.TabIndex(2)
+Gui.f_Main.txtStartPart.Create(TextBox,"",True,1770,300,0,105,2070,True,0,"Arial",8,-2147483643,1)
+Gui.f_Main.txtStartPart.MaxLength(20)
+Gui.f_Main.txtStartPart.TabStop(True)
+Gui.f_Main.txtStartPart.TabIndex(8)
+Gui.f_Main.lbl1.Create(Label,"Starting Part",True,885,210,0,105,1845,True,0,"Arial",8,-2147483633,0,0)
+Gui.f_Main.lbl1.BorderStyle(0)
+Gui.f_Main.luPartStart.Create(Button)
+Gui.f_Main.luPartStart.Size(375,375)
+Gui.f_Main.luPartStart.Position(1905,1995)
+Gui.f_Main.luPartStart.Caption("")
+Gui.f_Main.luPartStart.DefaultValue("")
+Gui.f_Main.luPartStart.Event(Click,luPartStart_Click)
+Gui.f_Main.luPartStart.Enabled(True)
+Gui.f_Main.luPartStart.Visible(True)
+Gui.f_Main.luPartStart.Zorder(0)
+Gui.f_Main.luPartStart.FontName("Tahoma")
+Gui.f_Main.luPartStart.FontSize(8.25)
+Gui.f_Main.luPartStart.SvgPicture("icon_browser_color")
+Gui.f_Main.luPartStart.TabStop(True)
+Gui.f_Main.luPartStart.TabIndex(9)
+Gui.f_Main.lbl2.Create(Label,"Ending Part",True,1935,255,0,2535,1845,True,0,"Arial",8,-2147483633,0,0)
+Gui.f_Main.lbl2.BorderStyle(0)
+Gui.f_Main.txtEndPart.Create(TextBox,"",True,1770,300,0,2520,2070,True,0,"Arial",8,-2147483643,1)
+Gui.f_Main.txtEndPart.MaxLength(20)
+Gui.f_Main.txtEndPart.TabStop(True)
+Gui.f_Main.txtEndPart.TabIndex(10)
+Gui.f_Main.luPartEnd.Create(Button)
+Gui.f_Main.luPartEnd.Size(375,375)
+Gui.f_Main.luPartEnd.Position(4320,1995)
+Gui.f_Main.luPartEnd.Caption("")
+Gui.f_Main.luPartEnd.Event(Click,luPartEnd_Click)
+Gui.f_Main.luPartEnd.Enabled(True)
+Gui.f_Main.luPartEnd.Visible(True)
+Gui.f_Main.luPartEnd.Zorder(0)
+Gui.f_Main.luPartEnd.FontName("Tahoma")
+Gui.f_Main.luPartEnd.FontSize(8.25)
+Gui.f_Main.luPartEnd.SvgPicture("icon_browser_color")
+Gui.f_Main.luPartEnd.TabStop(True)
+Gui.f_Main.luPartEnd.TabIndex(11)
+Gui.f_Main.chkAllbins.Create(CheckBox)
+Gui.f_Main.chkAllbins.Size(975,300)
+Gui.f_Main.chkAllbins.Position(105,1350)
+Gui.f_Main.chkAllbins.Caption("All Bins")
+Gui.f_Main.chkAllbins.Enabled(True)
+Gui.f_Main.chkAllbins.Visible(True)
+Gui.f_Main.chkAllbins.Zorder(0)
+Gui.f_Main.chkAllbins.FontName("Tahoma")
+Gui.f_Main.chkAllbins.FontSize(8.25)
+Gui.f_Main.chkAllbins.TabStop(True)
+Gui.f_Main.chkAllbins.TabIndex(7)
+Gui.f_Main.chkAllbins.Event(Change,chkAllbins_Change)
+Gui.f_Main.chkAllparts.Create(CheckBox)
+Gui.f_Main.chkAllparts.Size(1560,300)
+Gui.f_Main.chkAllparts.Position(105,2370)
+Gui.f_Main.chkAllparts.Caption("All Parts")
+Gui.f_Main.chkAllparts.Enabled(True)
+Gui.f_Main.chkAllparts.Visible(True)
+Gui.f_Main.chkAllparts.Zorder(0)
+Gui.f_Main.chkAllparts.FontName("Tahoma")
+Gui.f_Main.chkAllparts.FontSize(8.25)
+Gui.f_Main.chkAllparts.Value(1)
+Gui.f_Main.chkAllparts.DefaultValue(1)
+Gui.f_Main.chkAllparts.Event(Change,chkAllparts_Change)
+Gui.f_Main.chkAllparts.TabStop(True)
+Gui.f_Main.chkAllparts.TabIndex(12)
+Gui.f_Main.chkZeroQtyRecords.Create(CheckBox)
+Gui.f_Main.chkZeroQtyRecords.Enabled(True)
+Gui.f_Main.chkZeroQtyRecords.Visible(True)
+Gui.f_Main.chkZeroQtyRecords.Zorder(0)
+Gui.f_Main.chkZeroQtyRecords.Size(2070,300)
+Gui.f_Main.chkZeroQtyRecords.Position(2520,2370)
+Gui.f_Main.chkZeroQtyRecords.Caption("Include 0 Qty Records?")
+Gui.f_Main.chkZeroQtyRecords.FontName("Tahoma")
+Gui.f_Main.chkZeroQtyRecords.FontSize(8.25)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.BIRunID.Declare(Long,0)
+Variable.Global.BILogID.Declare(Long,0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Item Master Labels by Bin Range, Location, and Part Range
+'by Josh Withrow on 2015-06-04
+'updated by JW on 20220524 - Removed all remnants of UDT's, changed field order, fixed tab order, and updated controls for modernization.
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+Gui.f_Main..Show
+F.Intrinsic.Control.CallSub(chk_Allparts_Click)
+Gui.f_Main.txtLocation.SetFocus
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Catching.Start
+V.Local..BulkDeclareString(sError)
+F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}",V.Caller.ScriptFile,V.Ambient.NewLine,v.Args.sub,V.Args.errorno,V.args.errordesc,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.End
+Program.Sub.Catching.End
+
+Program.Sub.lustartbin_click.Start
+V.Local.bArgExists.Declare(Boolean)
+Function.Intrinsic.Control.CallSub(callbrowser,"iCommonBrowser",150)
+F.Intrinsic.Variable.ArgExists("sRet",V.Local.bArgExists)
+Function.Intrinsic.Control.If(V.Local.bArgExists,=,True)
+	Gui.f_Main.txtStartBin.Text(V.Args.sRet)
+	Gui.f_Main.txtEndBin.Text(V.Args.sRet)
+Function.Intrinsic.Control.EndIf
+Program.Sub.lustartbin_click.End
+
+Program.Sub.luendbin_click.Start
+V.Local.bArgExists.Declare(Boolean)
+Function.Intrinsic.Control.CallSub(callbrowser,"iCommonBrowser",150)
+F.Intrinsic.Variable.ArgExists("sRet",V.Local.bArgExists)
+Function.Intrinsic.Control.If(V.Local.bArgExists,=,True)
+	Gui.f_Main.txtEndBin.Text(V.Args.sRet)
+Function.Intrinsic.Control.EndIf
+Program.Sub.luendbin_click.End
+
+Program.Sub.luPartStart_Click.Start
+V.Local.bArgExists.Declare(Boolean)
+Function.Intrinsic.Control.CallSub(callbrowser,"iCommonBrowser",105)
+F.Intrinsic.Variable.ArgExists("sRet",V.Local.bArgExists)
+Function.Intrinsic.Control.If(V.Local.bArgExists,=,True)
+	Gui.f_Main.txtStartPart.Text(V.Args.sRet)
+	Gui.f_Main.txtEndPart.Text(V.Args.sRet)
+Function.Intrinsic.Control.EndIf
+Program.Sub.luPartStart_Click.End
+
+Program.Sub.luPartEnd_Click.Start
+V.Local.bArgExists.Declare(Boolean)
+Function.Intrinsic.Control.CallSub(callbrowser,"iCommonBrowser",105)
+F.Intrinsic.Variable.ArgExists("sRet",V.Local.bArgExists)
+Function.Intrinsic.Control.If(V.Local.bArgExists,=,True)
+	Gui.f_Main.txtEndPart.Text(V.Args.sRet)
+Function.Intrinsic.Control.EndIf
+Program.Sub.luPartEnd_Click.End
+
+Program.Sub.cmdprint_click.Start
+F.Intrinsic.Control.Try
+
+V.Local..BulkDeclareString(sSQL,sElementList,sReportPath)
+V.Local..BulkDeclareLong(iBIRptID)
+V.Local..BulkDeclareBoolean(bInvExtraExists)
+
+Gui.f_Main.cmdPrint.Enabled(False)
+
+F.ODBC.Connection!conx.TableExists("INV_EXTRA",V.Local.bInvExtraExists)
+
+V.Local.sSql.Append("SELECT IF(LP.GSS_PART is null,A.PART,ltrim(rtrim(LP.DISPLAY_PART))) AS DISPLAY_PART, IF(LP.GSS_PART is null,'',ltrim(rtrim(LP.DISPLAY_REV))) AS DISPLAY_REV, IF(LP.GSS_PART is null,A.PART,ltrim(rtrim(LP.DISPLAY_PART)) + ' ' + ltrim(rtrim(LP.DISPLAY_REV))) AS DISPLAY_PARTREV, A.*, B.*, B.bin as DEFAULT_BIN, C.text as EXTRA_TEXT, (select top 1 mfg_part from v_part_xref_user where part=B.PART) AS MFG_PART ")
+F.Intrinsic.Control.If(V.Local.bInvExtraExists)
+	V.Local.sSql.Append(", X.* ")
+F.Intrinsic.Control.EndIf
+V.Local.sSql.Append("FROM V_ITEM_MASTER A LEFT OUTER JOIN V_INVENTORY_ALL B ON B.PART=A.PART AND B.LOCATION=A.LOCATION LEFT OUTER JOIN V_INV_EXTRA_TEXT C ON C.PART=A.PART LEFT OUTER JOIN INV_LXR LP ON A.PART=LP.GSS_PART ")
+F.Intrinsic.Control.If(V.Local.bInvExtraExists)
+	V.Local.sSql.Append("LEFT OUTER JOIN INV_EXTRA X ON A.PART=left(X.PART + '                 ',17)+X.REV AND A.LOCATION=X.LOCATION ")
+F.Intrinsic.Control.EndIf
+V.Local.sSql.Append("WHERE A.BIN >= '{0}' AND A.BIN <= '{1}' AND A.LOCATION = '{2}' AND A.PART >= '{3}' AND A.PART<='{4}' ")
+F.Intrinsic.Control.If(V.Screen.f_Main!chkZeroQtyRecords.CheckedAsBoolean,=,False)
+	V.Local.sSql.Append(" AND A.QUANTITY<>0 ")
+F.Intrinsic.Control.EndIf
+V.Local.sSql.Append(" ORDER BY A.BIN, A.PART")
+
+'Get run ID
+F.Global.BI.GetRunID(V.Global.BIRunID)
+
+'initialize report
+F.Intrinsic.String.Concat(V.Caller.BusintDir,"\Labels\Custom\GAB_5474_ItemMasterByBinLoc.lab",V.Local.sreportpath)
+Function.Global.BI.InitializeReport("Part Item Master Labels (5474)",V.Local.sreportpath,V.Local.iBIRptID)
+
+'Starting BI Logging
+F.Global.BI.StartLogging(V.Global.BIRunID,V.Local.iBIRptID,-1,"",V.Global.BILogID)
+
+'Pass discriminatory info to the SQL statement
+F.Intrinsic.String.Build(V.Local.sSql,V.Screen.f_Main!txtStartBin.Text,V.Screen.f_Main!txtEndBin.Text,V.Screen.f_Main!txtLocation.Text,V.Screen.f_Main!txtStartPart.Text,V.Screen.f_Main!txtEndPart.Text,V.Local.sSql)
+
+F.data.DataTable.CreateFromSQL("LabelTemp","conx",v.Local.sSql)
+F.Intrinsic.Control.If(V.DataTable.LabelTemp.RowCount,>,0)
+	F.Global.BI.PrintCodesoftLabelFromDataTable(V.global.BIRunID,V.global.BILogID,"LabelTemp","",True)
+	'F.Intrinsic.Control.CallSub(F_main_unload)
+f.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No Lot/Bin records returned based on filter.")
+f.Intrinsic.Control.EndIf
+
+Gui.f_Main.cmdPrint.Enabled(True)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdprint_click.End
+
+Program.Sub.cmdcancel_click.Start
+F.Intrinsic.Control.CallSub(F_main_unload)
+
+Program.Sub.cmdcancel_click.End
+
+Program.Sub.f_main_unload.Start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.f_main_unload.End
+
+Program.Sub.lulocation_click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+V.Local.sSql.Set("select DISTINCT LOCATION from V_ITEM_MASTER")
+F.Intrinsic.String.Split("LOCATION","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000","*!*",V.Local.iWidths)
+F.Intrinsic.UI.MiniBrowser("Select Location","conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.f_Main.txtLocation.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.lulocation_click.End
+
+Program.Sub.CallBrowser.Start
+F.Intrinsic.Control.Try
+
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+Function.Intrinsic.UI.Browser(V.Args.iCommonBrowser, "", V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Function.Intrinsic.Variable.AddRV("sRet",V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Catching,"Sub",V.Ambient.CurrentSubroutine,"ErrorNo",V.Ambient.ErrorNumber,"ErrorDesc",V.Ambient.ErrorDescription) 
+F.Intrinsic.Control.EndTry
+Program.Sub.CallBrowser.End
+
+Program.Sub.chk_Allparts_Click.Start
+V.Local..BulkDeclareBoolean(b)
+
+F.Intrinsic.Control.if(v.Screen.f_Main!chkAllparts.Value,=,1)
+	V.Local.b.Set(False)
+	Gui.f_Main.txtStartPart.Text("")
+	Gui.f_Main.txtEndPart.Text("z")
+F.Intrinsic.Control.Else
+	V.Local.b.Set(True)
+	Gui.f_Main.txtStartPart.Text("")
+	Gui.f_Main.txtEndPart.Text("")
+F.Intrinsic.Control.EndIf
+Gui.f_Main.txtStartPart.Enabled(V.Local.b)
+Gui.f_Main.txtEndPart.Enabled(V.Local.b)
+Gui.f_Main.luPartStart.Enabled(V.Local.b)
+Gui.f_Main.luPartEnd.Enabled(V.Local.b)
+Program.Sub.chk_Allparts_Click.End
+
+Program.Sub.chk_Allbins_Click.Start
+V.Local..BulkDeclareBoolean(b)
+	
+F.Intrinsic.Control.if(v.Screen.f_Main!chkAllbins.Value,=,1)
+	V.Local.b.Set(False)
+	Gui.f_Main.txtStartBin.Text("")
+	Gui.f_Main.txtEndBin.Text("z")
+F.Intrinsic.Control.Else
+	V.Local.b.Set(True)
+	Gui.f_Main.txtStartBin.Text("")
+	Gui.f_Main.txtEndBin.Text("")
+F.Intrinsic.Control.EndIf
+Gui.f_Main.txtStartBin.Enabled(V.Local.b)
+Gui.f_Main.txtEndBin.Enabled(V.Local.b)
+Gui.f_Main.luStartBin.Enabled(V.Local.b)
+Gui.f_Main.luEndBin.Enabled(V.Local.b)
+Program.Sub.chk_Allbins_Click.End
+
+Program.Sub.chkAllparts_Change.Start
+F.Intrinsic.Control.Try
+	F.Intrinsic.Control.CallSub(chk_Allparts_Click)
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.EndTry
+Program.Sub.chkAllparts_Change.End
+
+Program.Sub.chkAllbins_Change.Start
+F.Intrinsic.Control.Try
+	F.Intrinsic.Control.CallSub(chk_Allbins_Click)
+F.Intrinsic.Control.Catch
+F.Intrinsic.Control.EndTry
+Program.Sub.chkAllbins_Change.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_BIN_MASTER_LABEL$}$DFINCH$}$4/25/2015$}$False
+${$5$}$2.0.0.0$}$2
+${$6$}$jwithrow$}$20230810152821814$}$D95tSYIikIvF+oq+s87EtBQePACEH+Ey8W86sZvBxWCEpLgcv/Pe9GpyLRGWeJzi/lmZ94p4FfHNuY2qBwwL7g==
+Program.Sub.Comments.End
